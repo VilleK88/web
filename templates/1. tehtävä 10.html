@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="message"></p>
+<script>
+  let diceNum = parseInt(prompt("Number of dice:"));
+  let sumOfNumbers = parseInt(prompt("Sum of the eye numbers:"));
+  let result = 0
+
+  for(let i = 0; i < 10000; i++) {
+    let r = countDice(diceNum, sumOfNumbers);
+    if(r) {
+      result += 1;
+    }
+  }
+
+  let probability = (result / 10000) * 100;
+  getText("Probability to get the sum " + sumOfNumbers + " with " + diceNum + " is " + probability.toFixed(2))
+
+  function countDice(numOfDice, sumOfNumbers) {
+    let countResult = 0
+    for(let i = 0; i < numOfDice; i++) {
+      countResult += Math.floor(Math.random() * 6) + 1;
+    }
+    if(countResult === sumOfNumbers) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function getText(text) {
+    document.getElementById("message").innerText = text;
+  }
+</script>
+</body>
+</html>
