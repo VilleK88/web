@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="message"></p>
+<script>
+    year = parseInt(prompt("Enter a year: "));
+    let text = "";
+    if((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        text = year + " is a leap year.";
+    } else {
+        text = year + " is not a leap year.";
+    }
+    document.getElementById("message").innerText = text;
+</script>
+</body>
+</html>
