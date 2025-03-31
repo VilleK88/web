@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="message"></p>
+<script>
+  startYear = parseInt(prompt("Star year?"));
+  endYear = parseInt(prompt("End year?"));
+  list = [];
+
+  for(startYear; startYear <= endYear; startYear++) {
+    let leapYear = ifLeapYear(startYear)
+    if(leapYear) {
+      list.push(leapYear);
+    }
+  }
+
+  displayLeapYears(list);
+
+  function ifLeapYear(year) {
+    if((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return year;
+    }
+  }
+
+  function displayLeapYears(years) {
+    let ul = document.createElement("ul");
+    for(let i = 0; i < years.length; i++) {
+      let li = document.createElement("li");
+      li.textContent = years[i];
+      ul.appendChild(li);
+    }
+    document.getElementById("message").appendChild(ul);
+  }
+</script>
+</body>
+</html>
