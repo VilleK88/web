@@ -10,7 +10,7 @@
   let diceRolls = parseInt(prompt("Number of dice rolls?"));
   let result = 0;
   for(let i = 0; i < diceRolls; i++) {
-    result += Math.floor(Math.random() * 6);
+    result += Math.floor(Math.random() * 6) + 1;
   }
   getText(result);
 
