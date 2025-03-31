@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="message"></p>
+<script>
+    classes = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
+    name = prompt("What is your name? ")
+    let num = Math.floor(Math.random() * 4);
+    school_class = classes[num];
+    document.getElementById("message").innerText = name + ", you are " + school_class + ".";
+</script>
+</body>
+</html>
