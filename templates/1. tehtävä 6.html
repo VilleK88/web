@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="message"></p>
+<script>
+  let answer = confirm("Should I calculate the square root?");
+  if(answer) {
+    let num = parseInt(prompt("Input the number: "));
+    if(num >= 0) {
+      getText(Math.sqrt(num));
+    } else {
+      getText("The square root of a negative number is not defined.");
+    }
+  } else {
+    getText("The square root is not calculated.");
+  }
+
+  function getText(text) {
+    document.getElementById("message").innerText = text;
+  }
+</script>
+</body>
+</html>
